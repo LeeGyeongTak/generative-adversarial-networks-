@@ -186,8 +186,7 @@ gan<-function(real_data,g_nn,d_nn,batchsize=100,epoch=100,disc_step=1,print_loss
       lapply(1:9,
              function(q) image(
                rotate(matrix(unlist(gg[q,]),nrow = sqrt(d_nn$input_dim), byrow = TRUE)),
-               col=grey.colors(255),
-               xlab=train[q,1]
+               col=grey.colors(255)        
              )
       )
       # dev.off()
