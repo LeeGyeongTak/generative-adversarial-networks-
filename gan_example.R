@@ -29,9 +29,9 @@ ganmodel<-gan(x,g_nn,d_nn,batchsize = 200,epoch = 1000,disc_step=1,display_gener
 gan_model$loss
 
 
-genration<-generator(ganmodel,100)
+generation<-generator(ganmodel,100)
 ## or if you stop traning
-genration<-generator(gan_model,100)
+generation<-generator(gan_model,100)
 
 hist(generation)
 
@@ -40,7 +40,7 @@ rotate <- function(x) t(apply(x, 2, rev))
 par(mfrow=c(3,3))
 lapply(1:9,
        function(q) image(
-         rotate(matrix(unlist(generator[q,]),nrow = 28, byrow = TRUE)),
+         rotate(matrix(unlist(generation[q,]),nrow = 28, byrow = TRUE)),
          col=grey.colors(255)
        )
 )
